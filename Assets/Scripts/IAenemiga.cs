@@ -19,10 +19,10 @@ public class IAenemiga : MonoBehaviour
     //Transform para en la funcion Awake hacer que la IA busque todo objeto con el Tag "Player"
     Transform _player;
 
-    // Puntos de patrulla
+    //Puntos de patrulla
     [SerializeField] Transform[] _patrolPoints;
 
-    // Rangos de deteccion y de ataque de la IA
+    //Rangos de deteccion y de ataque de la IA
     [SerializeField] float _detectionRange = 2;
     [SerializeField] float _attackRange =1;
 
@@ -96,6 +96,7 @@ public class IAenemiga : MonoBehaviour
         _agent.destination = _patrolPoints[Random.Range(0,_patrolPoints.Length)].position;
     }
 
+    //Booleana que devuelve un verdadero o falso dependiendo de si el jugador se encuentra en rango o no. Esta funcion permite a la IA saber cuando tiene que pasar a los estados de perseguir y de atacar
     bool EnRango(float _rango)
     {
         if(Vector3.Distance(transform.position, _player.position) < _rango)

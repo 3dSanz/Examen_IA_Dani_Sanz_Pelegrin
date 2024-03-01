@@ -11,7 +11,6 @@ public class PlayerMovimiento : MonoBehaviour
         _jugadorAgente = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("Fire1"))
@@ -20,6 +19,7 @@ public class PlayerMovimiento : MonoBehaviour
         }
     }
 
+    //Funcion que realiza un raycast de la camata a la posicion en la que se situa el raton y le indica a la IA que debe dirigirse hacia la posicion de el raton
     void Voypalla()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
